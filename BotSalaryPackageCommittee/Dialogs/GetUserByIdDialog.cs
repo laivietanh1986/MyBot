@@ -46,7 +46,7 @@ namespace BotSalaryPackageCommittee.Dialogs
 
         private List<EmployeeInformation> GetEmployeeInformation(int employeeId)
         {
-            var baseUrl = $"https://qaarp.amaris.com/SalaryPackageCommittee/IncreaseMatrix/GetEmployeeInformation?employeeIdStrings={employeeId}";
+            var baseUrl = $"xxx";
             var client = new RestClient(baseUrl);            
             var request = new RestRequest(Method.GET);
             IWebDriver driver = new PhantomJSDriver();
@@ -73,7 +73,7 @@ namespace BotSalaryPackageCommittee.Dialogs
                     $"{employeeInformation.Function}-{employeeInformation.Governance}",
                     $"Salary {employeeInformation.Salary} {employeeInformation.Currency}",
                     new CardImage(url: "http://via.placeholder.com/140x100.png"),
-                    new CardAction(ActionTypes.OpenUrl, "Detail", value: "https://arp.amaris.com/aShieldV2/"+employeeInformation.EmployeeId))
+                    new CardAction(ActionTypes.OpenUrl, "Detail", value: "xxx"+employeeInformation.EmployeeId))
                 );
             }
             return result;
@@ -93,7 +93,7 @@ namespace BotSalaryPackageCommittee.Dialogs
         }
         public ICookieJar GetCookie(IWebDriver driver)
         {
-            var baseUrl = "https://qaarp.amaris.com/SalaryPackageCommittee/index";
+            var baseUrl = "xxx";
             driver.Navigate().GoToUrl(baseUrl);
             driver.FindElement(By.Id("userNameInput")).SendKeys("xxx");
             driver.FindElement(By.Id("passwordInput")).SendKeys("zzz");
